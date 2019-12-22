@@ -27,6 +27,7 @@ namespace HotelWebApplication.Controllers
 
         #region редактирование
         [HttpGet]
+        [Authorize()]
         public ActionResult Edit(int? id)
         {
             if (id == null)
