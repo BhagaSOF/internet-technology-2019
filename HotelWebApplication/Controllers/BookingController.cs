@@ -7,7 +7,7 @@ namespace HotelWebApplication.Controllers
 {
     public class BookingController : Controller
     {
-        private HotelContext db = new HotelContext();
+        private WarehouseContext db = new WarehouseContext();
 
         [Authorize()]
         public ActionResult Index()
@@ -18,7 +18,7 @@ namespace HotelWebApplication.Controllers
         [Authorize()]
         public ActionResult All()
         {
-            IEnumerable<Booking> bookings = db.Bookings;
+            IEnumerable<Item> bookings = db.Bookings;
             ViewBag.Bookings = bookings;
 
             return View();
@@ -28,7 +28,7 @@ namespace HotelWebApplication.Controllers
         [Authorize()]
         public ActionResult Delete(int id)
         {
-            Booking b = db.Bookings.Find(id);
+            Item b = db.Bookings.Find(id);
 
             if (b == null)
                 return HttpNotFound();

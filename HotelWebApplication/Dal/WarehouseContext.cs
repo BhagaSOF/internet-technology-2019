@@ -3,11 +3,11 @@ using HotelWebApplication.Models;
 
 namespace HotelWebApplication.Dal
 {
-    public class HotelContext : DbContext
+    public class WarehouseContext : DbContext
     {
         public DbSet<User> Users { get; set; }
 
-        public DbSet<Warehouse> Bookings { get; set; }
+        public DbSet<Item> Bookings { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Room> Rooms { get; set; }
     }

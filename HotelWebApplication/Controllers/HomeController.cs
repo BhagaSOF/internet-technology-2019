@@ -8,7 +8,7 @@ namespace HotelWebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        private HotelContext db = new HotelContext();
+        private WarehouseContext db = new WarehouseContext();
 
         public ActionResult Index()
         {

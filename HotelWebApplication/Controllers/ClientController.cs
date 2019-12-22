@@ -7,7 +7,7 @@ namespace HotelWebApplication.Controllers
 {
     public class ClientController : Controller
     {
-        private HotelContext db = new HotelContext();
+        private WarehouseContext db = new WarehouseContext();
 
         [Authorize()]
         public ActionResult Index()

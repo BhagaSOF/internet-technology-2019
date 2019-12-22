@@ -12,7 +12,7 @@ namespace HotelWebApplication.Controllers
 {
     public class RoomController : Controller
     {
-        private HotelContext db = new HotelContext();
+        private WarehouseContext db = new WarehouseContext();
 
         [Authorize()]
         public ActionResult Index()
@@ -86,14 +86,14 @@ namespace HotelWebApplication.Controllers
 
         [HttpPost]
         [Authorize()]
-        public ActionResult Book(Booking model)
+        public ActionResult Book(Item model)
         {
             model.BookingDateTime = DateTime.Now;
 
             #region проверка номера комнаты
             Room room = db.Rooms.
                 FirstOrDefault(
-                r => r.Id == model.RoomId);
+                r => r.Id == model.IsAvailable);
 
             if (room == null)
             {
@@ -106,12 +106,12 @@ namespace HotelWebApplication.Controllers
             #region проверка клиента
             Client client = db.Clients.
                 FirstOrDefault(
-                c => c.PassportSeriesAndNumber == model.ClientPassportSeriesAndNumber);
+                c => c.PassportSeriesAndNumber == model.Name);
 
             if (client == null) // если нет такого -- создаём
             {
-                int passportSeriesAndNumber = model.ClientPassportSeriesAndNumber;
-                string fullName = model.ClientFullName;
+                int passportSeriesAndNumber = model.Name;
+                string fullName = model.Supplier;
                 Client c = new Client
                 {
                     PassportSeriesAndNumber = passportSeriesAndNumber,
@@ -122,10 +122,10 @@ namespace HotelWebApplication.Controllers
             }
             else // если есть -- проверяем ФИО
             {
-                if (client.FullName != model.ClientFullName)
+                if (client.FullName != model.Supplier)
                 {
                     ModelState.AddModelError(string.Empty, "ФИО клиента не соответсвует серии и номеру паспорта в базе");
-                    model.ClientFullName = client.FullName;
+                    model.Supplier = client.FullName;
                     return View("Book", model);
                 }
             }
