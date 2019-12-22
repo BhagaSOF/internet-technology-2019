@@ -20,6 +20,11 @@
                     @Html.HiddenFor(model => model.Id)
                 </div>
 
+                @* Доступен *@
+                <div>
+                    @Html.HiddenFor(model => model.IsAvailable)
+                </div>
+
                 @* Название *@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
