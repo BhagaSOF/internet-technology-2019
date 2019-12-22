@@ -27,16 +27,13 @@
                 <table class="my-main-menu-table">
                     <tr>
                         <td>
-                            @Html.ActionLink("Главная", "Index", "Home")
+                            @Html.ActionLink("Склад (В НАЛИЧИИ)", "All", "Sale")
                         </td>
                         <td>
-                            @Html.ActionLink("Список номеров", "All", "Room")
+                            @Html.ActionLink("Торговля (ПРОДАННЫЕ)", "All", "Sold")
                         </td>
                         <td>
-                            @Html.ActionLink("Список бронирования", "All", "Booking")
-                        </td>
-                        <td>
-                            @Html.ActionLink("Список клиентов", "All", "Client")
+                            @Html.ActionLink("Все товары (в наличии и нет)", "All", "All")
                         </td>
                     </tr>
                 </table>

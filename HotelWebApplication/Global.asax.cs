@@ -14,7 +14,7 @@ namespace HotelWebApplication
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new HotelDbInitializer());
+            Database.SetInitializer(new WarehouseDbInitializer());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

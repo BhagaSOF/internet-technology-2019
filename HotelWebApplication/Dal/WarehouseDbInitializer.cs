@@ -1,10 +1,9 @@
-using System;
 using System.Data.Entity;
 using HotelWebApplication.Dal;
 
 namespace HotelWebApplication.Models
 {
-    public class HotelDbInitializer : DropCreateDatabaseAlways<WarehouseContext>
+    public class WarehouseDbInitializer : DropCreateDatabaseAlways<WarehouseContext>
     {
         protected override void Seed(WarehouseContext db)
         {
@@ -13,7 +12,7 @@ namespace HotelWebApplication.Models
                 Login = "admin",
                 Password = "password"
             });
-         
+
 
             base.Seed(db);
         }
