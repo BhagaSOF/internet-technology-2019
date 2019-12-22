@@ -122,7 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\SaleController.cs" />
-    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\AllController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SoldController.cs" />
     <Compile Include="Global.asax.cs">
@@ -285,9 +285,9 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Sale\All.cshtml" />
-    <Content Include="Views\Client\All.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Sold\All.cshtml" />
+    <Content Include="Views\All\All.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
