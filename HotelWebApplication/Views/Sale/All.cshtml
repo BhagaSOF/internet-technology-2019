@@ -20,6 +20,7 @@
 
                 <td></td>
                 <td></td>
+                <td></td>
             </tr>
             @foreach (var g in ViewBag.GoodsForSale)
             {
@@ -30,6 +31,7 @@
                 <td><p>@g.Supplier</p></td>
                 <td><p>@g.IsAvailable</p></td>
 
+                <td><p>@Html.ActionLink("Пометить проданным", "Sold", "Sale", new { id = @g.Id }, null)</p></td>
                 <td><p>@Html.ActionLink("Редактировать описание", "Edit", "Sale", new { id = @g.Id }, null)</p></td>
                 <td><p>@Html.ActionLink("Удалить товар", "Delete", "Sale", new { id = @g.Id }, null)</p></td>
             </tr>

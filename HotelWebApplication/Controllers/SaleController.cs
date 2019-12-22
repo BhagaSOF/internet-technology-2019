@@ -25,6 +25,30 @@ namespace HotelWebApplication.Controllers
             return View();
         }
 
+        #region пометить проданным
+        [HttpGet]
+        [Authorize()]
+        public ActionResult Sold(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Good good = db.Goods.Find(id);
+            if (good != null && good.IsAvailable == true)
+            {
+                good.IsAvailable = false;
+                db.Entry(good).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return RedirectToAction("All", "Sale");
+            }
+
+            return HttpNotFound();
+        }
+        #endregion /пометить проданным
+
         #region редактирование
         [HttpGet]
         [Authorize()]
