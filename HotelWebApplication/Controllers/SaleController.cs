@@ -99,5 +99,24 @@ namespace HotelWebApplication.Controllers
 
             return RedirectToAction("All", "Sale");
         }
+
+        #region добавление
+        [HttpGet]
+        [Authorize()]
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize()]
+        public ActionResult Add(Good model)
+        {
+            db.Goods.Add(model);
+            db.SaveChanges();
+
+            return RedirectToAction("All", "Sale");
+        }
+        #endregion /добавление
     }
 }
