@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotelWebApplication.Models
 {
-    public class Item
+    public class Good
     {
         [Display(Name = "Номер товара")]
         [Key] public int Id { get; set; }
