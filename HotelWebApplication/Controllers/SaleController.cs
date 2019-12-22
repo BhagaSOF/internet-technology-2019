@@ -1,6 +1,6 @@
 ﻿using HotelWebApplication.Dal;
 using HotelWebApplication.Models;
-using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace HotelWebApplication.Controllers
@@ -18,8 +18,8 @@ namespace HotelWebApplication.Controllers
         [Authorize()]
         public ActionResult All()
         {
-            IEnumerable<Item> bookings = db.Bookings;
-            ViewBag.Bookings = bookings;
+            var goodsForSale = db.Goods.Where(g => g.IsAvailable == true);
+            ViewBag.GoodsForSale = goodsForSale;
 
             return View();
         }
@@ -28,17 +28,17 @@ namespace HotelWebApplication.Controllers
         [Authorize()]
         public ActionResult Delete(int id)
         {
-            Item b = db.Bookings.Find(id);
+            Good g = db.Goods.Find(id);
 
-            if (b == null)
+            if (g == null || g.IsAvailable == false)
                 return HttpNotFound();
             else
             {
-                db.Bookings.Remove(b);
+                db.Goods.Remove(g);
                 db.SaveChanges();
             }
 
-            return RedirectToAction("All", "Hotel");
+            return RedirectToAction("All", "Sale");
         }
     }
 }
