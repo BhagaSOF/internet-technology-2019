@@ -3,19 +3,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotelWebApplication.Models
 {
-    public class Warehouse
+    public class Item
     {
         [Display(Name = "Номер товара")]
-        [Key] public int ItemId { get; set; }
+        [Key] public int Id { get; set; }
 
         [Display(Name = "Название")]
-        public string ItemName { get; set; }
+        public string Name { get; set; }
 
         [Display(Name = "Цена")]
-        public int ItemPrice { get; set; }
+        public int Price { get; set; }
 
         [Display(Name = "Поставщик")]
-        public string SupplierName { get; set; }
+        public string Supplier { get; set; }
 
         [Display(Name = "В наличии")]
         public bool IsAvailable { get; set; }
