@@ -1,5 +1,6 @@
 ﻿using HotelWebApplication.Dal;
 using HotelWebApplication.Models;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -23,6 +24,39 @@ namespace HotelWebApplication.Controllers
 
             return View();
         }
+
+        #region редактирование
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Good good = db.Goods.Find(id);
+            if (good != null && good.IsAvailable == true)
+            {
+                return View(good);
+            }
+
+            return HttpNotFound();
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Good model)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(model).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return RedirectToAction("All", "Sale");
+            }
+
+            return View("Edit", model);
+        }
+        #endregion /редактирование
 
         [HttpGet]
         [Authorize()]
