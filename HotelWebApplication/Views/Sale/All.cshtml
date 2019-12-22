@@ -19,18 +19,20 @@
                 <td><p>На складе?</p></td>
 
                 <td></td>
+                <td></td>
             </tr>
             @foreach (var g in ViewBag.GoodsForSale)
             {
-                <tr>
-                    <td><p>@g.Id</p></td>
-                    <td><p>@g.Name</p></td>
-                    <td><p>@g.Price</p></td>
-                    <td><p>@g.Supplier</p></td>
-                    <td><p>@g.IsAvailable</p></td>
+            <tr>
+                <td><p>@g.Id</p></td>
+                <td><p>@g.Name</p></td>
+                <td><p>@g.Price</p></td>
+                <td><p>@g.Supplier</p></td>
+                <td><p>@g.IsAvailable</p></td>
 
-                    <td><p>@Html.ActionLink("Удалить товар", "Delete", "Good", new { id = @g.Id }, null)</p></td>
-                </tr>
+                <td><p>@Html.ActionLink("Редактировать описание", "Edit", "Sale", new { id = @g.Id }, null)</p></td>
+                <td><p>@Html.ActionLink("Удалить товар", "Delete", "Sale", new { id = @g.Id }, null)</p></td>
+            </tr>
             }
         </table>
     }
