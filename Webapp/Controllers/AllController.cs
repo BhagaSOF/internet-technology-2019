@@ -33,7 +33,9 @@ namespace Webapp.Controllers
                 r => r.Name.Contains(search) ||
                      r.Supplier.Contains(search)).ToList();
 
-            return PartialView(goods);
+            ViewBag.Goods = goods;
+
+            return View("All");
         }
     }
 }
