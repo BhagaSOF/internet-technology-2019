@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Webapp.Controllers
 {
-    public class FindController
+    public class FindController : Controller
     {
         private readonly WarehouseContext db = new WarehouseContext();
 

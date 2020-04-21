@@ -17,16 +17,20 @@ namespace Webapp.Controllers
         [Authorize()]
         public ActionResult Index()
         {
-            return RedirectToAction("All", "All");
+            PagedData<Good> pagedGoods = new PagedData<Good>
+            {
+                Data = db.Goods.OrderBy(r => r.Name).Skip(PageSize * 0).Take(PageSize).ToList(),
+                TotalPages = Convert.ToInt32(Math.Ceiling((double)db.Goods.Count() / PageSize)),
+                CurrentPage = 1
+            };
+
+            return View(pagedGoods);
         }
 
         [Authorize()]
         public ActionResult All()
         {
-            IEnumerable<Good> goods = db.Goods;
-            ViewBag.Goods = goods;
-
-            return View();
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
