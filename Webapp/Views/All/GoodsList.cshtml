@@ -1,0 +1,46 @@
+﻿@model Webapp.Helpers.PagedData<Webapp.Models.Good>
+
+<table class="good-foreach">
+    <tr>
+        <td>
+            <p>ИД товара</p>
+        </td>
+        <td>
+            <p>Название</p>
+        </td>
+        <td>
+            <p>Цена</p>
+        </td>
+        <td>
+            <p>Поставщик</p>
+        </td>
+        <td>
+            <p>На складе?</p>
+        </td>
+    </tr>
+    @foreach (var g in Model.Data)
+    {
+        string goodDiv = "good-descr-" + g.Id;
+
+        <tr>
+            <td>
+                <p>@g.Id</p>
+            </td>
+            <td>
+                <p>@g.Name</p>
+            </td>
+            <td>
+                <p>@g.Price</p>
+            </td>
+            <td>
+                <p>@g.Supplier</p>
+            </td>
+            <td>
+                <p id="@goodDiv">
+                    @Ajax.ActionLink("Проверить наличие", "GetAvailability", new {id = g.Id}, new AjaxOptions {UpdateTargetId = @goodDiv})
+                </p>
+                <p>@g.IsAvailable</p>
+            </td>
+        </tr>
+    }
+</table>
