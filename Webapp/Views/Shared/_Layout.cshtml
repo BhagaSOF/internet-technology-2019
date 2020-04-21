@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="my-container-wrapper">
+        <div class="my-container">
+            <div class="header">
+                <div class="my-logo">
+                    <a href="/" title="Складской учет бара">
+                        <img class="my-logo-img" alt="Складской учет бара" src="~/Content/Other/logo.gif" title="Управление баром" />
+                    </a>
+                </div>
+
+                <div class="contacts">
+                    <p>
+                        Возникли технические неполадки?|<a href="mailto:example@example.com">example@example.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="my-main-menu">
+                <table class="my-main-menu-table">
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Склад (В НАЛИЧИИ)", "All", "Sale")
+                        </td>
+                        <td>
+                            @Html.ActionLink("Торговля (ПРОДАННЫЕ)", "All", "Sold")
+                        </td>
+                        <td>
+                            @Html.ActionLink("Все товары (в наличии и нет)", "All", "All")
+                        </td>
+                        <td>
+                            @Html.ActionLink("Добавить товар", "Add", "Sale")
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="my-main-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>
