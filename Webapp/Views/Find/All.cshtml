@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @if (ViewBag.Goods == null)
+    {
+        <h1>Список товаров пуст</h1>
+    }
+    else
+    {
+        using (Ajax.BeginForm("Search", "Find",
+            new AjaxOptions
+            {
+                UpdateTargetId = "results",
+                LoadingElementId = "loading"
+            },
+            new {@class = "navbar-form navbar-left"}))
+        {
+            <form class="navbar-nav pull-right">
+                <input type="text" name="search" placeholder="Поиск..." class="search-field"/>
+            </form>
+        }
+
+        <h1>ВСЕ ТОВАРЫ (товары в наличии и проданные)</h1>
+        <div id="loading">
+            <p>Идёт загрузка...</p>
+        </div>
+        <div id="results"></div>
+    }
+    
+    @Scripts.Render("~/scripts/jquery-3.3.1.js")
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
+</div>

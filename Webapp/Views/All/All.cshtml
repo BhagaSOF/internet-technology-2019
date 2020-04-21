@@ -9,19 +9,12 @@
     }
     else
     {
-        using (Ajax.BeginForm("Search", "All",
-            new AjaxOptions
-            {
-                UpdateTargetId = "results",
-                LoadingElementId = "loading"
-            },
-            new {@class = "navbar-form navbar-left"}))
+        using (Html.BeginForm("Search", "All", FormMethod.Post, new {@class = "navbar-form navbar-left"}))
         {
             <form class="navbar-nav pull-right">
                 <input type="text" name="search" placeholder="Поиск..." class="search-field"/>
             </form>
         }
-
         <h1>ВСЕ ТОВАРЫ (товары в наличии и проданные)</h1>
         <table class="room-foreach">
             <tr>

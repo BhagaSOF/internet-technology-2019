@@ -1,10 +1,10 @@
-﻿using GoodSaleWebApplication.Dal;
-using GoodSaleWebApplication.Models;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
+using Webapp.Dal;
+using Webapp.Models;
 
-namespace GoodSaleWebApplication.Controllers
+namespace Webapp.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Webapp.Models.Good>
+
+<table class="good-foreach">
+    <tr>
+        <td>
+            <p>ИД товара</p>
+        </td>
+        <td>
+            <p>Название</p>
+        </td>
+        <td>
+            <p>Цена</p>
+        </td>
+        <td>
+            <p>Поставщик</p>
+        </td>
+        <td>
+            <p>На складе?</p>
+        </td>
+    </tr>
+    @foreach (var g in Model)
+    {
+        <tr>
+            <td>
+                <p>@g.Id</p>
+            </td>
+            <td>
+                <p>@g.Name</p>
+            </td>
+            <td>
+                <p>@g.Price</p>
+            </td>
+            <td>
+                <p>@g.Supplier</p>
+            </td>
+            <td>
+                <p>@g.IsAvailable</p>
+            </td>
+        </tr>
+    }
+</table>

@@ -254,6 +254,5 @@ _Pvt_Extensions
 .idea/
 *.sln.iml
 
-HotelWebApplication/Scripts/
-HotelWebApplication/Content/
-HotelWebApplication/fonts/
+Webapp/fonts/
+Webapp/Scripts/

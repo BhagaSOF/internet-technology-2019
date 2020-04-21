@@ -6,10 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using GoodSaleWebApplication.Dal;
-using GoodSaleWebApplication.Models;
+using Webapp.Models;
+using Webapp.Dal;
 
-namespace GoodSaleWebApplication
+namespace Webapp
 {
     public class MvcApplication : System.Web.HttpApplication
     {

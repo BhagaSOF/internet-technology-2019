@@ -1,11 +1,11 @@
-﻿using GoodSaleWebApplication.Dal;
-using GoodSaleWebApplication.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
+using Webapp.Dal;
+using Webapp.Models;
 
-namespace GoodSaleWebApplication.Controllers
+namespace Webapp.Controllers
 {
     public class SaleController : Controller
     {

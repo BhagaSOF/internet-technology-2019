@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 using Webapp.Dal;
 using Webapp.Models;
+using System.Data.Entity;
+using System.Linq;
 
 namespace Webapp.Controllers
 {
-    public class AllController : Controller
+    public class FindController
     {
-        private WarehouseContext db = new WarehouseContext();
+        private readonly WarehouseContext db = new WarehouseContext();
 
         [Authorize()]
         public ActionResult Index()
         {
-            return RedirectToAction("All", "All");
+            return RedirectToAction("All", "Find");
         }
 
         [Authorize()]
@@ -24,7 +25,7 @@ namespace Webapp.Controllers
 
             return View();
         }
-
+        
         [HttpPost]
         [Authorize()]
         public ActionResult Search(string search)
@@ -33,9 +34,7 @@ namespace Webapp.Controllers
                 r => r.Name.Contains(search) ||
                      r.Supplier.Contains(search)).ToList();
 
-            ViewBag.Goods = goods;
-
-            return View("All");
+            return PartialView(goods);
         }
     }
 }
