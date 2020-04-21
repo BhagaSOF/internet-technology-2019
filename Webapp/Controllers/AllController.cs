@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Webapp.Dal;
+using Webapp.Helpers;
 using Webapp.Models;
 
 namespace Webapp.Controllers
@@ -36,6 +38,20 @@ namespace Webapp.Controllers
             ViewBag.Goods = goods;
 
             return View("All");
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult GoodsList(int pageNum)
+        {
+            PagedData<Good> pagedGoods = new PagedData<Good>
+            {
+                Data = db.Goods.OrderBy(r => r.Name).Skip(PageSize * (pageNum - 1)).Take(PageSize).ToList(),
+                TotalPages = Convert.ToInt32(Math.Ceiling((double) db.Goods.Count() / PageSize)),
+                CurrentPage = pageNum
+            };
+
+            return PartialView("GoodsList", pagedGoods);
         }
     }
 }
