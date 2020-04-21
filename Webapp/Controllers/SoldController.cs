@@ -1,8 +1,8 @@
-﻿using GoodSaleWebApplication.Dal;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
+using Webapp.Dal;
 
-namespace GoodSaleWebApplication.Controllers
+namespace Webapp.Controllers
 {
     public class SoldController : Controller
     {

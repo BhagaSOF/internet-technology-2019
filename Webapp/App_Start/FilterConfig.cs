@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace GoodSaleWebApplication
+namespace Webapp
 {
     public class FilterConfig
     {
