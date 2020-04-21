@@ -39,7 +39,6 @@
                 <p id="@goodDiv">
                     @Ajax.ActionLink("Проверить наличие", "GetAvailability", new {id = g.Id}, new AjaxOptions {UpdateTargetId = @goodDiv})
                 </p>
-                <p>@g.IsAvailable</p>
             </td>
         </tr>
     }

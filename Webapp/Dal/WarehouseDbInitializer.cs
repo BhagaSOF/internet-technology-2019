@@ -3,7 +3,7 @@ using Webapp.Models;
 
 namespace Webapp.Dal
 {
-    public class WarehouseDbInitializer : DropCreateDatabaseAlways<WarehouseContext>
+    public class WarehouseDbInitializer : DropCreateDatabaseIfModelChanges<WarehouseContext>
     {
         protected override void Seed(WarehouseContext db)
         {

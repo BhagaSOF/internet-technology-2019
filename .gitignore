@@ -256,3 +256,11 @@ _Pvt_Extensions
 
 Webapp/fonts/
 Webapp/Scripts/
+
+*.map
+Webapp/Content/bootstrap-grid.css
+Webapp/Content/bootstrap-grid.min.css
+Webapp/Content/bootstrap-reboot.css
+Webapp/Content/bootstrap-reboot.min.css
+Webapp/Content/bootstrap.css
+Webapp/Content/bootstrap.min.css
