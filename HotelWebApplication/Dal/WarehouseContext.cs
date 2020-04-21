@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
-using HotelWebApplication.Models;
+using GoodSaleWebApplication.Models;
 
-namespace HotelWebApplication.Dal
+namespace GoodSaleWebApplication.Dal
 {
     public class WarehouseContext : DbContext
     {

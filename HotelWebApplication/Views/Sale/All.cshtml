@@ -2,40 +2,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    @if (ViewBag.GoodsForSale == null)
-    {
-        <h1>Список товаров пуст</h1>
-    }
-    else
-    {
-        <h1>СКЛАД (товары в наличии)</h1>
-        <table class="room-foreach">
-            <tr>
-                <td><p>ИД товара</p></td>
-                <td><p>Название</p></td>
-                <td><p>Цена</p></td>
-                <td><p>Поставщик</p></td>
-                <td><p>На складе?</p></td>
+    <div>
+        @if (ViewBag.GoodsForSale == null)
+        {
+            <h1>Список товаров пуст</h1>
+        }
+        else
+        {
+            
 
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            @foreach (var g in ViewBag.GoodsForSale)
-            {
-            <tr>
-                <td><p>@g.Id</p></td>
-                <td><p>@g.Name</p></td>
-                <td><p>@g.Price</p></td>
-                <td><p>@g.Supplier</p></td>
-                <td><p>@g.IsAvailable</p></td>
 
-                <td><p>@Html.ActionLink("Пометить проданным", "Sold", "Sale", new { id = @g.Id }, null)</p></td>
-                <td><p>@Html.ActionLink("Редактировать описание", "Edit", "Sale", new { id = @g.Id }, null)</p></td>
-                <td><p>@Html.ActionLink("Удалить товар", "Delete", "Sale", new { id = @g.Id }, null)</p></td>
-            </tr>
-            }
-        </table>
-    }
-</div>
+            <h1>СКЛАД (товары в наличии)</h1>
+            <table class="room-foreach">
+                <tr>
+                    <td><p>ИД товара</p></td>
+                    <td><p>Название</p></td>
+                    <td><p>Цена</p></td>
+                    <td><p>Поставщик</p></td>
+                    <td><p>На складе?</p></td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                @foreach (var g in ViewBag.GoodsForSale)
+                {
+                    <tr>
+                        <td><p>@g.Id</p></td>
+                        <td><p>@g.Name</p></td>
+                        <td><p>@g.Price</p></td>
+                        <td><p>@g.Supplier</p></td>
+                        <td><p>@g.IsAvailable</p></td>
+
+                        <td><p>@Html.ActionLink("Пометить проданным", "Sold", "Sale", new { id = @g.Id }, null)</p></td>
+                        <td><p>@Html.ActionLink("Редактировать описание", "Edit", "Sale", new { id = @g.Id }, null)</p></td>
+                        <td><p>@Html.ActionLink("Удалить товар", "Delete", "Sale", new { id = @g.Id }, null)</p></td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>

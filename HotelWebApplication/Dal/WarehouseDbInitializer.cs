@@ -1,7 +1,7 @@
 using System.Data.Entity;
-using HotelWebApplication.Dal;
+using GoodSaleWebApplication.Dal;
 
-namespace HotelWebApplication.Models
+namespace GoodSaleWebApplication.Models
 {
     public class WarehouseDbInitializer : DropCreateDatabaseAlways<WarehouseContext>
     {

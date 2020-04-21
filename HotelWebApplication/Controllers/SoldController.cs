@@ -1,8 +1,8 @@
-﻿using HotelWebApplication.Dal;
+﻿using GoodSaleWebApplication.Dal;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace HotelWebApplication.Controllers
+namespace GoodSaleWebApplication.Controllers
 {
     public class SoldController : Controller
     {

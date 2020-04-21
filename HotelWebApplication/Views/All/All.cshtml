@@ -2,32 +2,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    @if (ViewBag.Goods == null)
-    {
-        <h1>Список товаров пуст</h1>
-    }
-    else
-    {
-        <h1>ВСЕ ТОВАРЫ (товары в наличии и проданные)</h1>
-        <table class="room-foreach">
-            <tr>
-                <td><p>ИД товара</p></td>
-                <td><p>Название</p></td>
-                <td><p>Цена</p></td>
-                <td><p>Поставщик</p></td>
-                <td><p>На складе?</p></td>
-            </tr>
-            @foreach (var g in ViewBag.Goods)
+    <div>
+        @if (ViewBag.Goods == null)
+        {
+            <h1>Список товаров пуст</h1>
+        }
+        else
+        {
+            using (Html.BeginForm("Search", "All", FormMethod.Post, new { @class = "navbar-form navbar-left" }))
             {
-                <tr>
-                    <td><p>@g.Id</p></td>
-                    <td><p>@g.Name</p></td>
-                    <td><p>@g.Price</p></td>
-                    <td><p>@g.Supplier</p></td>
-                    <td><p>@g.IsAvailable</p></td>
-                </tr>
+                <form class="navbar-nav pull-right">
+                    <input type="text" name="search" placeholder="Поиск..." class="search-field" />
+                </form>
             }
-        </table>
-    }
-</div>
+            <h1>ВСЕ ТОВАРЫ (товары в наличии и проданные)</h1>
+            <table class="room-foreach">
+                <tr>
+                    <td><p>ИД товара</p></td>
+                    <td><p>Название</p></td>
+                    <td><p>Цена</p></td>
+                    <td><p>Поставщик</p></td>
+                    <td><p>На складе?</p></td>
+                </tr>
+                @foreach (var g in ViewBag.Goods)
+                {
+                    <tr>
+                        <td><p>@g.Id</p></td>
+                        <td><p>@g.Name</p></td>
+                        <td><p>@g.Price</p></td>
+                        <td><p>@g.Supplier</p></td>
+                        <td><p>@g.IsAvailable</p></td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>

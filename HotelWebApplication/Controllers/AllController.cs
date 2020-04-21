@@ -1,9 +1,10 @@
-﻿using HotelWebApplication.Dal;
-using HotelWebApplication.Models;
+﻿using GoodSaleWebApplication.Dal;
+using GoodSaleWebApplication.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
-namespace HotelWebApplication.Controllers
+namespace GoodSaleWebApplication.Controllers
 {
     public class AllController : Controller
     {
@@ -22,6 +23,20 @@ namespace HotelWebApplication.Controllers
             ViewBag.Goods = goods;
 
             return View();
+        }
+
+        [HttpPost]
+        [Authorize()]
+        public ActionResult Search(string search)
+        {
+            IEnumerable<Good> goods = db.Goods.
+                Where(
+                r => r.Name.Contains(search) ||
+                r.Supplier.Contains(search)).ToList();
+
+            ViewBag.Goods = goods;
+
+            return View("All");
         }
     }
 }

@@ -51,8 +51,8 @@
     }
 
         .my-main-menu-table td a {
-            font: normal 18px 'Tahoma';
-            color: #4c2002;
+            font: normal 20px 'Tahoma';
+            color: #48e1c3;
         }
 
 .contacts {
@@ -60,11 +60,11 @@
     position: absolute;
     top: 150px;
     left: 50px;
-    color: #7f1308;
+    color: #48e1c3;
 }
 
     .contacts a {
-        color: #7f1308;
+        color: #48e1c3;
     }
 
 .room-foreach img {
@@ -88,21 +88,21 @@
     }
 
         .my-main-content p a {
-            color: #7f1308;
+            color: #dbcc56;
         }
 
     .my-main-content h1 {
-        font: bold 18px 'Tahoma';
+        font: bold 20px 'Tahoma';
         padding: 0;
         margin: 10px auto 0;
-        color: #7f1308;
+        color: #48e1c3;
     }
 
     .my-main-content h2 {
-        font: bold 18px 'Tahoma';
+        font: bold 16px 'Tahoma';
         padding: 0;
         margin: 10px auto 0;
-        color: #7f1308;
+        color: #48e1c3;
     }
 
     .my-main-content ul {
@@ -120,7 +120,7 @@ html, body {
     width: 100%;
     height: 100%;
     font-family: 'Tahoma', serif;
-    background: rgb(255, 250, 230);
+    background: rgb(97, 135, 193);
 }
 
 a img {

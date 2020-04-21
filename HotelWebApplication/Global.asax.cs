@@ -6,9 +6,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using HotelWebApplication.Models;
+using GoodSaleWebApplication.Models;
 
-namespace HotelWebApplication
+namespace GoodSaleWebApplication
 {
     public class MvcApplication : System.Web.HttpApplication
     {

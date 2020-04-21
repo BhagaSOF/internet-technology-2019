@@ -1,10 +1,10 @@
-﻿using HotelWebApplication.Dal;
-using HotelWebApplication.Models;
+﻿using GoodSaleWebApplication.Dal;
+using GoodSaleWebApplication.Models;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace HotelWebApplication.Controllers
+namespace GoodSaleWebApplication.Controllers
 {
     public class HomeController : Controller
     {
