@@ -29,14 +29,11 @@ namespace GoodSaleWebApplication.Controllers
         [Authorize()]
         public ActionResult Search(string search)
         {
-            IEnumerable<Good> goods = db.Goods.
-                Where(
+            IEnumerable<Good> goods = db.Goods.Where(
                 r => r.Name.Contains(search) ||
-                r.Supplier.Contains(search)).ToList();
+                     r.Supplier.Contains(search)).ToList();
 
-            ViewBag.Goods = goods;
-
-            return View("All");
+            return PartialView(goods);
         }
     }
 }
