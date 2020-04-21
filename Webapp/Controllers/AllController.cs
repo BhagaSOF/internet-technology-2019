@@ -10,6 +10,8 @@ namespace Webapp.Controllers
 {
     public class AllController : Controller
     {
+        private static readonly int PageSize = 3;
+        
         private WarehouseContext db = new WarehouseContext();
 
         [Authorize()]
@@ -52,6 +54,13 @@ namespace Webapp.Controllers
             };
 
             return PartialView("GoodsList", pagedGoods);
+        }
+        
+        [Authorize]
+        public ActionResult GetAvailability(int id)
+        {
+            Good good = db.Goods.Find(id);
+            return PartialView(good);
         }
     }
 }

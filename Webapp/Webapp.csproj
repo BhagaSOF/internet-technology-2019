@@ -262,6 +262,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\All\GetAvailability.cshtml" />
     <Content Include="Views\All\GoodsList.cshtml" />
     <Content Include="Views\Find\All.cshtml" />
     <Content Include="Views\Find\Search.cshtml" />
